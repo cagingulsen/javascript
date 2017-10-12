@@ -2,6 +2,8 @@
 
 *A mostly reasonable approach to JavaScript for Endoks Energy Developers*
 
+Version: 0.1.0
+
 ## Table of Contents
 
   1. [References](#references)
@@ -1329,27 +1331,7 @@
     const val = parseInt(inputValue, 10);
     ```
 
-  - [15.4](#coercion--comment-deviations) If for whatever reason you are doing something wild and `parseInt` is your bottleneck and need to use Bitshift for [performance reasons](https://jsperf.com/coercion-vs-casting/3), leave a comment explaining why and what you're doing.
-
-    ```javascript
-    // good
-    /**
-     * parseInt was the reason my code was slow.
-     * Bitshifting the String to coerce it to a
-     * Number made it a lot faster.
-     */
-    const val = inputValue >> 0;
-    ```
-
-  - [15.5](#coercion--bitwise) **Note:** Be careful when using bitshift operations. Numbers are represented as [64-bit values](https://es5.github.io/#x4.3.19), but bitshift operations always return a 32-bit integer ([source](https://es5.github.io/#x11.7)). Bitshift can lead to unexpected behavior for integer values larger than 32 bits. [Discussion](https://github.com/airbnb/javascript/issues/109). Largest signed 32-bit Int is 2,147,483,647:
-
-    ```javascript
-    2147483647 >> 0; // => 2147483647
-    2147483648 >> 0; // => -2147483648
-    2147483649 >> 0; // => -2147483647
-    ```
-
-  - [15.6](#coercion--booleans) Booleans:
+  - [15.4](#coercion--booleans) Booleans:
 
     ```javascript
     const age = 0;
