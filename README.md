@@ -95,7 +95,6 @@
 
 ## Arrays
 
-  <a name="arrays--literals"></a><a name="4.1"></a>
   - [3.1](#arrays--literals) Use the literal syntax for array creation. eslint: [`no-array-constructor`](http://eslint.org/docs/rules/no-array-constructor.html)
 
     ```javascript
